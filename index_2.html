@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIEXE - Soluciones de evaluación psicométrica</title>
+    <meta name="description" content="Soluciones de evaluación psicométrica para instituciones educativas y empresariales.">
+    <link rel="icon" type="image/svg+xml" href="img/ciexe_logo.svg">
+    <link rel="alternate icon" type="image/png" href="img/ciexe_logo.png">
+    <!-- Import Montserrat Semibold and Roboto Regular/Semibold from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Roboto:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: #F5F5F5;
+            --grey-light: #F0F0F0;
+            --grey-dark: #E0E0E0;
+            --black: #000;
+            --accent: #FBC02D;
+        }
+        html {
+            box-sizing: border-box;
+        }
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            color: var(--black);
+            font-family: 'Roboto', Arial, sans-serif;
+            
+        }
+        header {
+            
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+        }
+        header p {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-weight: 400;
+        }
+        main {
+            width: 100%;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            padding: 3rem 14rem;
+        }
+        .bg-grey{
+            background: var(--grey-light);
+            box-shadow:  0 0 15px rgba(0,0,0,0.2);
+        }
+        .row {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: start;
+            gap: 4rem;  
+            padding: 2rem 10;
+            
+        }
+        .col {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+           
+        }
+        .logo-img {
+            width: 150px;
+            height: auto;
+            padding-right: 1.3rem;
+
+        }
+        .logo-txt {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            color: var(--black);
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        .logo-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--black);
+        }
+        .stripe{
+            width: 100%;
+            text-align: center;
+            padding-top: 3rem;
+            font-size: 1.3rem;
+            font-style: italic
+        }
+        h2{
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 2rem;
+            color: var(--black);
+        }
+        h3 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-align: left;
+            color: var(--black);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        h3 img {
+            width: 45px;
+            
+        }
+         h4 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 800;
+            font-size: 1.6rem;
+            text-align: center;
+            color: var(--black);
+        }
+        p {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-weight: 400;
+            font-size: 1.3rem;
+            line-height: 2.2rem;
+            color: var(--black);
+        }
+        span {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-weight: 600;
+            color: var(--black);
+        }
+        ul {
+            padding-left: 1.5rem;
+            line-height: 2.2rem;
+        }
+        ul li {
+            display: flex;
+            flex-direction: row;
+            gap: 0.8rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+        ul li img{
+            width: 25px;
+        }
+        ul li::marker {
+            color: var(--accent);
+        }
+        .ul-frame {
+            border: 3px solid var(--accent);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            background: var(--grey-light);
+            display: flex;
+            justify-content: center;
+        }
+        .ul-frame-b {
+            border: 3px solid var(--accent);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            background: var(--accent);
+            display: flex;
+            justify-content: center;
+        }
+        .ul-height-b {
+            height: 540px;
+            justify-content: center !important;
+            align-items: center;
+        }
+        .ul-action-b {
+            height: 540px;
+            justify-content: center !important;
+            align-items: center;
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'montserrat', Arial, sans-serif;
+            font-weight: 800;
+        }
+        .b-less li {
+            list-style: none;
+        }
+        .a-panel{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .a-panel .row {
+            padding: 0;
+            gap: 1rem;
+        }
+        .a-panel .col {
+            height: 280px;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            padding: 0 1rem;
+            gap: .2rem;
+        }
+        .a-panel .col p{
+            font-size: 1.1rem;
+            padding: 0;
+            margin: 0;
+            line-height: 1.2rem;
+        }
+        .a-table{
+            display: none;
+        }
+        .icon-black {
+            filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+        }
+        .cta {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--black);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Roboto', Arial, sans-serif;
+            margin-top: 2rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .cta:hover {
+            background: #ffd54f;
+            color: var(--black);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 2rem 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.1rem;
+            box-shadow: 6px 6px 4px rgba(0,0,0,0.08);
+        }
+        th {
+            background: var(--accent);
+            color: var(--black);
+            font-weight: 600;
+            padding: 0.75rem;
+        }
+        td {
+            background: var(--grey-light);
+            color: var(--black);
+            padding: 0.75rem;
+        }
+        tr:nth-child(even) td {
+            background: var(--grey-dark);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: var(--grey-light);
+            color: var(--black);
+            font-size: 0.95rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 1380px) {
+            .container {
+                padding: 2rem 5rem;
+            }
+            .row {
+                gap: 2rem;
+                padding: 1.5rem 0;
+            }
+            
+        }
+        @media (max-width: 1138px) {
+            .a-panel .col {
+                height: 340px;
+            }
+            
+        }
+        @media (max-width: 900px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            .row {
+                flex-direction: column;
+                gap: 2rem;
+                align-items: stretch;
+                padding: 1rem 0;
+            }
+            .col {
+                width: 100%;
+            }
+            .logo-container {
+                
+                align-items: center;
+            }
+            .logo-img {
+                padding-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+        @media (max-width: 700px), (max-width: 900px) and (orientation: portrait) {
+            
+            h4{
+                margin: 0;
+            }
+            p {
+                margin: 0;
+                padding: .5rem 0;
+            }
+            .stripe {
+                padding-top: 0;
+            }
+            .row {
+                
+                gap: 0;
+            }
+            .col {
+                padding: 0;
+                margin: 0;
+            }
+            .a-panel{
+                display: none;
+            }
+            .a-table{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header >
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="logo-container">
+                        <div class="logo-img-c"><img src="img/ciexe_logo.svg" alt="CIEXE Logo" class="logo-img"></div>
+                        <div class="logo-txt">
+                            <div class="logo-title">CIEXE</div>
+                            <div class="logo-baseline">Centro de Investigación y Experimentación Educativa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4>"Los datos no solo explican: <br> guían, anticipan y transforman."</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="stripe"><span>CIEXE</span> Tu referencia confiable para consultar y generar datos relacionados con habilidades de aprendizaje, nivel de conocimiento adquirido, gestión de los procesos de enseñanza – aprendizaje en instituciones educativas. </div>
+            </div>
+        </div>
+    </header>
+    <main class="">
+        <section class="container bg-grey">
+            <div class="row">
+                <div class="col" >
+                    <h2>¿Qué es CIEXE?</h2>
+                    <p>Un centro  de investigación educativa que transforma el <span>análisis de datos</span> en decisiones.</p>
+                    <p>Desde 2006, CIEXE convierte <span>evaluaciones, encuestas  y mediciones psicométricas</span> en información clara y accionable para instituciones, empresas y proyectos educativos.</p>
+                    <p>A través de la psicometría validada, la tecnología aplicada y el enfoque personalizado, <span>generamos y compartimos información estadística útil y clara a instituciones educativas, empresas y organizaciones</span> que buscan mejorar desde la evidencia.</p>
+                </div>
+                <div class="col">
+                    <h2>Nuestra propuesta de valor</h2>
+                    <div class="ul-frame b-less">
+                        <ul>
+                            <li><img src="img/chart-bar.svg" alt="">Estadísticas educativas claras y accesibles.</li>
+                            <li><img src="img/brain.svg" alt="">Psicometría digital validada aplicada a gran escala.</li>
+                            <li><img src="img/machine-learning.svg" alt="">Análisis estadístico útil y accionable.</li>
+                            <li><img src="img/online-learning-01.svg" alt="">Instrumentos adaptados a problemas reales de aprendizaje.​</li>
+                        </ul>
+                    </div>
+                    <p>¿El resultado? <span>Información que sí transforma</span> escuelas, programas y trayectorias educativas.</p>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div class="row"><h2>¿Por qué apoyarte en CIEXE?</h2></div>
+            <div class="row">
+                <div class="col">                    
+                    <div class="ul-frame b-less">
+                        <ul>
+                            <li><img src="img/ciexe-bullet.svg" alt="">Somos autónomos.</li>
+                            <li><img src="img/ciexe-bullet.svg" alt="">Somos expertos en el desarrollo de  psicométricos.</li>
+                            <li><img src="img/ciexe-bullet.svg" alt="">Entregamos datos accesibles y reportes visuales.</li>
+                            <li><img src="img/ciexe-bullet.svg" alt="">Atendemos desde un modelo mixto: acceso gratuito, licencias y servicios personalizados.</li>
+                            <li><img src="img/ciexe-bullet.svg" alt="">Contamos con aliados que aplican miles de evaluaciones en pocas horas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container bg-grey">  
+            <div class="row">
+                <h2>Qué ofrecemos</h2>
+            </div>          
+            <div class="row">
+                <div class="col">
+                    <p>Trabajamos con instrumentos propios, análisis a gran escala y un modelo mixto:</p>
+                    <ul class="b-less">
+                        <li><img src="img/open-source.svg" alt="">Plataforma de datos abiertos de acceso gratuito.</li>
+                        <li><img src="img/open-source.svg" alt="">Licencias con costo para acceder a análisis especializados.</li>
+                        <li><img src="img/open-source.svg" alt="">Venta directa de evaluaciones, informes o diagnósticos.</li>
+                    </ul>
+                    <p>En CIEXE creemos que <span>las mejores decisiones</span> educativas y organizacionales no se improvisan: <span>se fundamentan en evidencia.</span></p>
+                    <p>Nuestro modelo de trabajo se basa en la <span>generación, validación y análisis riguroso de datos psicométricos y estadísticos relacionados con las habilidades de aprendizaje</span> (intelectuales, emocionales, metacognitivas, hábitos y técnicas de estudio) y el nivel de conocimientos adquiridos por estudiantes y colaboradores y la gestión de procesos de enseñanza – aprendizaje en aula.</p>
+                </div>
+                <div class="col">
+                    <p>Gracias a nuestra colaboración continua con empresas especializadas como Lexium, y al análisis de millones de evaluaciones aplicadas en diversos contextos, contamos con un banco de datos robusto y dinámico que permite:</p>
+                    <ul class="b-less">
+                        <li><img src="img/search.svg" alt="">Detectar patrones de desempeño y áreas de mejora.</li>
+                        <li><img src="img/diagnostic.svg" alt="">Formular diagnósticos institucionales con base real.</li>
+                        <li><img src="img/balance-line.svg" alt="">Generar comparaciones contextualizadas.</li>
+                        <li><img src="img/strategy.svg" alt="">Diseñar estrategias de intervención con mayor precisión.</li>
+                    </ul>
+                    <p>Este enfoque nos impulsa a ir más allá de la intuición o la tradición. En CIEXE, todo parte del análisis: <span>lo que medimos, lo que reportamos y lo que proponemos tiene como base datos verificados, actualizados y relevantes.</span></p>
+                    <p>Con ello, ofrecemos a la comunidad educativa y empresarial <span>un marco confiable para comprender, decidir y actuar con evidencia.</span></p>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>¿A quién nos dirigimos?</h2>
+                    <div class="ul-frame b-less">
+                        <ul>
+                            <li><img src="img/bullseye.svg" alt="">Instituciones educativas (públicas y privadas).</li>
+                            <li><img src="img/bullseye.svg" alt="">Empresas del sector educativo y desarrollo humano.</li>
+                            <li><img src="img/bullseye.svg" alt="">Fundaciones y ONGs interesadas en educación.</li>
+                            <li><img src="img/bullseye.svg" alt="">Personas interesadas en datos educativos confiables.</li>
+                            <li><img src="img/bullseye.svg" alt="">Estudiantes que requieran datos para sus proyectos, tesis, tesinas.</li>
+                            <li><img src="img/bullseye.svg" alt="">Investigadores en el área educativa.</li>
+                            <li><img src="img/bullseye.svg" alt="">Público en general.</li>
+                        </ul>
+                    </div>            
+                </div>
+                <div class="col">
+                    <h2>Lo que nos distingue</h2>
+                    <div class="ul-frame-b ul-height-b">
+                        <ul class="b-less">
+                            <li>✓ Rigurosidad técnica + impacto social</li>
+                            <li>✓ Enfoque educativo especializado en habilidades de aprendizaje, <br> conocimientos y gestión educativa</li>
+                            <li>✓ Datos útiles, no solo acumulados</li>
+                            <li>✓ Procesos propios y adaptables</li>
+                            <li>​✓ Psicometría con diagnóstico inmediato</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section>
+            <div class="container bg-grey">
+                <div class="row">
+                    <div class="col">
+                        <h2>Áreas de acción principales</h2>
+                        <p>Publicamos indicadores confiables, actualizados y comprensibles  que se convierten en estadísticas de referencia sobre:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">                    
+                        <div class="a-panel">
+                            <div class="row">
+                                <div class="col ul-frame-b">
+                                    <h3><img src="img/brain.svg" class="icon-black" alt="">Habilidades de aprendizaje</h3>
+                                    <p>Cognitivas, socioemocionales, metacognitivas, de lectura, técnicas y hábitos de estudio de estudiantes y docentes.</p>
+                                </div>
+                                <div class="col ul-frame">
+                                    <h3><img src="img/chart-bar.svg" class="icon-black" alt="">Estadísticas de conocimiento adquirido</h3>
+                                    <p>Por estudiantes.</p>
+                                </div>
+                                <div class="col ul-frame-b">
+                                    <h3><img src="img/school 1.svg" class="icon-black" alt="">Gestión de procesos de enseñanza – aprendizaje</h3>
+                                    <p>En aula.</p>
+                                </div>
+                                <div class="col ul-frame">
+                                    <h3><img src="img/search.svg" class="icon-black" alt="">Investigación educativa aplicada</h3>
+                                    <p>Estudios por pedido dirigidos a institución, tema o población.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col ul-frame">
+                                    <h3><img src="img/map-aiming.svg" class="icon-black" alt="">Psicometría personalizada</h3>
+                                    <p>Diseño de instrumentos para medir habilidades intelectuales, socioemocionales, metacognitivas y hábitos de estudio.</p>
+                                </div>
+                                <div class="col ul-frame-b">
+                                    <h3><img src="img/chart-line-solid-full.svg" class="icon-black" alt="">Informes e indicadores</h3>
+                                    <p>Elaboramos reportes claros, visuales y accionables para directivos, docentes, fundaciones e instituciones. <br> <br> También desarrollamos “informes espejo” para compararse con el promedio nacional o regional.</p>
+                                </div>
+                                <div class="col ul-frame">
+                                    <h3><img src="img/network-5.svg" class="icon-black" alt="">Servicios para empresas educativas aliadas</h3>
+                                    <p>Apoyo técnico, análisis psicométrico y validación de herramientas.</p>
+                                </div>
+                                <div class="col ul-frame-b ul-action-b">
+                                    <div class="">Solicita más información</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <table class="a-table">
+                            <thead>
+                                <tr>
+                                    <th>Categoría</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td ><span>Habilidades de aprendizaje</span></td>
+                                    <td>Cognitivas, socioemocionales, metacognitivas, de lectura, técnicas y hábitos de estudio de estudiantes y docentes.</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Estadísticas de conocimiento adquirido</span></td>
+                                    <td>Por estudiantes.</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Gestión de procesos de enseñanza – aprendizaje</span></td>
+                                    <td>En aula.</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Investigación educativa aplicada</span></td>
+                                    <td>Estudios por pedido dirigidos a institución, tema o población.</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Psicometría personalizada</span></td>
+                                    <td>Diseño de instrumentos para medir habilidades intelectuales, socioemocionales, metacognitivas y hábitos de estudio.</td>
+                                </tr>
+                                <tr>
+                                    <td><span>Informes e indicadores</span></td>
+                                    <td>
+                                        Elaboramos reportes claros, visuales y accionables para directivos, docentes, fundaciones e instituciones. <br><br>
+                                        También desarrollamos “informes espejo” para compararse con el promedio nacional o regional.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span>Servicios para empresas educativas aliadas</span></td>
+                                    <td>Apoyo técnico, análisis psicométrico y validación de herramientas.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>Contacto</h2>
+                        <p>¿Tienes dudas, comentarios o deseas colaborar con CIEXE? Completa el siguiente formulario y nos pondremos en contacto contigo.</p>
+                        <div class="c-form">
+                            <form id="contact-form" style="max-width: 500px; margin: 0 auto;">
+                                <div style="margin-bottom: 1.2rem;">
+                                    <label for="name" style="display:block; font-weight:600; margin-bottom:0.4rem;">Nombre</label>
+                                    <input type="text" id="name" name="name" required
+                                        style="width:100%; padding:0.7rem; border:2px solid var(--grey-dark); border-radius:5px; font-size:1rem; background:var(--grey-light); font-family:'Roboto', Arial, sans-serif;">
+                                </div>
+                                <div style="margin-bottom: 1.2rem;">
+                                    <label for="email" style="display:block; font-weight:600; margin-bottom:0.4rem;">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" required
+                                        style="width:100%; padding:0.7rem; border:2px solid var(--grey-dark); border-radius:5px; font-size:1rem; background:var(--grey-light); font-family:'Roboto', Arial, sans-serif;">
+                                </div>
+                                <div style="margin-bottom: 1.2rem;">
+                                    <label for="message" style="display:block; font-weight:600; margin-bottom:0.4rem;">Mensaje</label>
+                                    <textarea id="message" name="message" rows="5" required
+                                        style="width:100%; padding:0.7rem; border:2px solid var(--grey-dark); border-radius:5px; font-size:1rem; background:var(--grey-light); font-family:'Roboto', Arial, sans-serif; resize:vertical;"></textarea>
+                                </div>
+                                <button type="submit" class="cta" style="width:100%; font-size:1.1rem;">Enviar mensaje</button>
+                            </form>
+                        </div>
+                        <div id="form-success" style="display:none; margin-top:1.5rem; color:green; font-weight:600; text-align:center;">
+                            ¡Gracias por contactarnos! Pronto te responderemos.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+            document.getElementById('contact-form').addEventListener('submit', function(e){
+                e.preventDefault();
+                document.getElementById('contact-form').style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+            });
+            </script>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 CIEXE. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
