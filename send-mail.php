@@ -66,6 +66,14 @@ $bodyLines = [
 ];
 $body = implode("\n", $bodyLines);
 
+// Guarda una copia local del mensaje para respaldo
+$backupDir = __DIR__ . '/mail-log';
+if (!is_dir($backupDir)) {
+    @mkdir($backupDir, 0755, true);
+}
+$backupFile = $backupDir . '/' . date('Ymd_His') . '_' . bin2hex(random_bytes(4)) . '.txt';
+@file_put_contents($backupFile, $body);
+
 // Cabeceras
 $headers = [];
 $headers[] = 'MIME-Version: 1.0';
